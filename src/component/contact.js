@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react';
-import Navbar from './Navbar.js';
-import Footer from './footer.js';
 import 'bootstrap-icons/font/bootstrap-icons.css'; // Import Bootstrap Icons CSS
 
 const ContactUs = () => {
@@ -48,8 +46,7 @@ const ContactUs = () => {
                     <h4>Call:</h4>
                     <p>+91 8300864083</p>
                   </div>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125322.44173081056!2d76.88483282752004!3d11.0141262969356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f971cb5%3A0x2fc1c81e183ed282!2sCoimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1734414678622!5m2!1sen!2sin" width="400" height="300" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+                  </div>
               </div>
 
               <div className="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
