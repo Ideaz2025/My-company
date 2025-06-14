@@ -13,13 +13,10 @@ import Button from '@mui/material/Button';
 import { createTheme } from '@mui/material/styles';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import SearchIcon from '@mui/icons-material/Search';
 import { AppProvider } from '@toolpad/core/AppProvider';
 import Tooltip from '@mui/material/Tooltip';
-import Chip from '@mui/material/Chip';
 import TextField from '@mui/material/TextField';
-import CloudCircleIcon from '@mui/icons-material/CloudCircle';
 import IconButton from '@mui/material/IconButton';
 import { DashboardLayout, ThemeSwitcher } from '@toolpad/core/DashboardLayout';
 import { Account, AccountPreview, AccountPopoverFooter, SignOutButton } from '@toolpad/core/Account';
@@ -293,7 +290,7 @@ function ToolbarActionsSearch() {
 function CustomAppTitle() {
   return (
     <Stack direction="row" alignItems="center" spacing={2}>
-      <img src={logo} width='50px'/>
+      <img src={logo} width='50px'alt='logo'/>
       <Typography variant="h6">IDEAZ</Typography>
       {/* <Chip size="small" label="BETA" color="info" />
       <Tooltip title="Connected to production">

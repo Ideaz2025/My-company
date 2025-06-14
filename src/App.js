@@ -2,12 +2,11 @@ import './App.css';
 import Navbar from './component/Navbar';
 
 import {
-  BrowserRouter as Router,
+
   Routes,
   Route,
 
 } from "react-router-dom";
-import DashboardLayoutBasic from './component/Dashboard';
 import ThemeSCignInPage from './component/login';
 import SignUp from './component/Signip';
 import Home from './component/home';

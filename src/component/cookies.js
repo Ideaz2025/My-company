@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Button, Typography, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 
 const Cookies = () => {
-  const [cookiesAccepted, setCookiesAccepted] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const cookiesConsent = getCookie('cookiesConsent');
-    if (cookiesConsent === 'true') {
-      setCookiesAccepted(true);
-    } else {
+    if (cookiesConsent !== 'true') {
       setOpen(true);
     }
   }, []);
@@ -33,18 +30,16 @@ const Cookies = () => {
   };
 
   const deleteCookie = (name) => {
-    document.cookie = name + '=; Max-Age=-99999999;';
+    document.cookie = name + '=; Max-Age=0; path=/;';
   };
 
   const handleAcceptCookies = () => {
     setCookie('cookiesConsent', 'true', 365);
-    setCookiesAccepted(true);
     setOpen(false);
   };
 
   const handleDeclineCookies = () => {
     deleteCookie('cookiesConsent');
-    setCookiesAccepted(false);
     setOpen(false);
   };
 

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Container, Typography, Box, Grid, Paper } from '@mui/material';
-import { styled } from '@mui/material/styles';
+
 import './style.css';
 import img from './img/portfolio-1.jpg';
 import ava1 from './img/portfolio-2.jpg';
@@ -8,19 +7,13 @@ import ava2 from './img/portfolio-3.jpg';
 import ava3 from './img/portfolio-4.jpg';
 import ava4 from './img/portfolio-5.jpg';
 import munees from './img/munees1.jpeg';
-import selva from './img/selva.jpeg';
 import Kanagu from './img/kanagaraj.jpg';
-import rao from './img/rao.jpeg';
 import { Link } from 'react-router-dom';
 import { Facebook, GitHub, Instagram, LinkedIn, Twitter } from '@mui/icons-material';
 import Card from 'react-bootstrap/Card';
 import Carousel from 'react-bootstrap/Carousel';
 
-const TeamMember = styled(Paper)(({ theme }) => ({
-  padding: theme.spacing(2),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
+
 
 export default function AboutUs() {
   return (
@@ -135,10 +128,10 @@ export default function AboutUs() {
                         <h4>Muneeswaran P</h4>
                         <span>Chief Executive Officer || Full stack developers</span>
                         <div className="social">
-                          <a href="https://munees2004.netlify.app" target='blank'><GitHub /></a>
-                          <a href="https://www.facebook.com/profile.php?id=100070998938957" target='blank'><Facebook /></a>
-                          <a href="https://www.instagram.com/man__of__heart39/" target='blank'><Instagram /></a>
-                          <a href="https://www.linkedin.com/in/muneeswaran-p-bab627287/" target='blank'><LinkedIn /></a>
+                          <a href="https://munees2004.netlify.app" target="_blank" rel="noopener noreferrer"><GitHub /></a>
+                          <a href="https://www.facebook.com/profile.php?id=100070998938957" target="_blank" rel="noopener noreferrer"><Facebook /></a>
+                          <a href="https://www.instagram.com/man__of__heart39/" target="_blank" rel="noopener noreferrer"><Instagram /></a>
+                          <a href="https://www.linkedin.com/in/muneeswaran-p-bab627287/" target="_blank" rel="noopener noreferrer"><LinkedIn /></a>
                         </div>
                       </div>
                     </div>
@@ -155,10 +148,10 @@ export default function AboutUs() {
                         <h4>Kanagaraj M</h4>
                         <span>Flutter developer||Web and app development || Founder of Nocorps</span>
                         <div className="social">
-                          <a href="" target='blank'><Twitter /></a>
-                          <a href=""><Facebook/></a>
-                          <a href=""><Instagram/></a>
-                          <a href=""><LinkedIn/></a>
+                          <button type="button" className="icon-btn" aria-label="Twitter"><Twitter /></button>
+                          <button type="button" className="icon-btn" aria-label="Facebook"><Facebook /></button>
+                          <button type="button" className="icon-btn" aria-label="Instagram"><Instagram /></button>
+                          <button type="button" className="icon-btn" aria-label="LinkedIn"><LinkedIn /></button>
                         </div>
                       </div>
                     </div>

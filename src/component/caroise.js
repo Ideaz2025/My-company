@@ -6,13 +6,9 @@ import 'aos/dist/aos.css'; // Import AOS CSS
 import AOS from 'aos'; // Import AOS
 import Ava from './img/hero-img.png';
 import ava1 from './img/why-us.png';
-import ava2 from './img/portfolio-1.jpg';
-import ava3 from './img/portfolio-2.jpg';
-import ava4 from './img/portfolio-3.jpg';
-import back from './img/back.jpg';
-import { Carousel as BootstrapCarousel, Accordion } from 'react-bootstrap';
 
-function Carousel() {
+import Accordion from 'react-bootstrap/Accordion';
+function HeroCarousel() {
   useEffect(() => {
     AOS.init({ duration: 1000 }); // Initialize AOS with a duration of 1000ms
   }, []);
@@ -27,7 +23,7 @@ function Carousel() {
               <h2>Conveys a sense of creativity, imagination, and forward-thinking</h2>
               <div className="d-flex justify-content-center justify-content-lg-start">
                 <p className="btn-get-started scrollto">Get Started</p>
-                <p href="" className="glightbox btn-watch-video"><i className="bi bi-play-circle"></i><span>Watch Video</span></p>
+                <span className="glightbox btn-watch-video"><i className="bi bi-play-circle"></i><span>Watch Video</span></span>
               </div>
             </div>
             <div className="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
@@ -50,7 +46,7 @@ function Carousel() {
               <div className="accordion-list">
                 <Accordion defaultActiveKey="0">
                   <Accordion.Item eventKey="0">
-                    <Accordion.Header style={{backgroundColor:': #041f3a'}}>Design Team</Accordion.Header>
+                    <Accordion.Header style={{ backgroundColor: '#041f3a' }}>Design Team</Accordion.Header>
                     <Accordion.Body>
                       The Design team is responsible for creating the visual and interactive elements of a website, ensuring it is both aesthetically pleasing and user-friendly. Here are some key aspects of what the Design team typically handles.
                     </Accordion.Body>
@@ -80,4 +76,4 @@ function Carousel() {
   );
 }
 
-export default Carousel;
+export default HeroCarousel;

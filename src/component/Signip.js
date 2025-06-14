@@ -1,7 +1,5 @@
 import React from "react";
-import Avatar from "@mui/material/Avatar";
 import { Button, Container, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Box, Typography } from "@mui/material";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Grid from "@mui/material/Grid";
 import Navbar from './Navbar';
 import logo from './img/1.png';
@@ -33,7 +31,7 @@ export default function SignUp() {
           alignItems: "center",
         }}
       >
-          <img src={logo} width='50px'/>
+          <img src={logo} width='50px'alt="logo"/>
         <Typography component="h1" variant="h5">
           Sign up with {provider}
         </Typography>
