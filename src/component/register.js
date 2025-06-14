@@ -1,6 +1,4 @@
 
-import Navbar from './Navbar.js'
-import Footer from './footer.js'
 import React, { useEffect } from 'react';
 const From = () => {
     useEffect(() => {

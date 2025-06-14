@@ -1,49 +1,13 @@
 import * as React from 'react';
-import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Ava from './img/hero-img.png';
-import { styled } from '@mui/material/styles';
+
 import Gif1 from './img/web-developer.gif';
 import Gif2 from './img/digital-art.gif';
 import Gif3 from './img/advertising.gif';
 import Gif4 from './img/dashboard.gif';
 import './style.css';
 
-const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-  height: 10,
-  borderRadius: 5,
-  [`&.${linearProgressClasses.colorPrimary}`]: {
-    backgroundColor: theme.palette.grey[200],
-  },
-  [`& .${linearProgressClasses.bar}`]: {
-    borderRadius: 5,
-    backgroundColor: '#041F3A',
-  },
-}));
 
-const CircularProgressWithLabel = (props) => {
-  return (
-    <Box position="relative" display="inline-flex">
-      <CircularProgress variant="determinate" {...props} size={100} />
-      <Box
-        top={0}
-        left={0}
-        bottom={0}
-        right={0}
-        position="absolute"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-      >
-        <Typography variant="caption" component="div" color="textSecondary" style={{fontSize: '1.5rem'}}>
-          {`${Math.round(props.value)}%`}
-        </Typography>
-      </Box>
-    </Box>
-  );
-};
+
 
 export default function LinearWithValueLabel() {
   return (

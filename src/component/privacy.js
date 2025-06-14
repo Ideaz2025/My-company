@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import Navbar from './Navbar.js';
-import Footer from './footer.js';
+
 
 const PrivacyPolicy = () => {
   return (

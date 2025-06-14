@@ -20,7 +20,7 @@ import BuildIcon from '@mui/icons-material/Build';
 import InfoIcon from '@mui/icons-material/Info';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import { Link } from 'react-router-dom';
-import { Button, useMediaQuery, Drawer, List, ListItem, ListItemIcon, ListItemText, Divider, colors } from '@mui/material';
+import { Button,  Drawer, List, ListItem, ListItemIcon, ListItemText, Divider } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import LoginIcon from "@mui/icons-material/Login";
 import logo from './img/1.png';
@@ -101,7 +101,6 @@ export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl1, setMobileMoreAnchorEl1] = React.useState(null);
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
   const isMenuOpen = Boolean(anchorEl);
@@ -117,24 +116,14 @@ export default function PrimarySearchAppBar() {
   const handleMobileMenuClose1 = () => {
     setMobileMoreAnchorEl1(null);
   };
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
 
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
   };
-  const handleMenuClose1 = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose1();
-  };
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
-  };
-  const handleMobileMenuOpen1 = (event) => {
-    setMobileMoreAnchorEl1(event.currentTarget);
   };
 
   const toggleDrawer = (open) => (event) => {
@@ -251,8 +240,6 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
 
-  const isMobile = useMediaQuery('(max-width:600px)');
-
   const list = (
     <Box
       sx={{ width: 250, backgroundColor: 'white', height: '100%', color: 'black', borderRight: '3px solid #ccc' }}
@@ -308,7 +295,7 @@ export default function PrimarySearchAppBar() {
               {pages.map((page) => (
                 <Button
                   key={page.name}
-                  onClick={handleCloseNavMenu}
+                  onClick={handleMenuClose}
                   sx={{ my: 2, color: 'white', display: 'block', marginLeft: '30px' }}
                   component={Link}
                   to={`/${page.name.toLowerCase().replace(/\s+/g, '')}`}
@@ -353,7 +340,6 @@ export default function PrimarySearchAppBar() {
               </IconButton>
               <IconButton
                 size="large"
-                edge="end"
                 aria-label="account of current user"
                 aria-controls={menuId}
                 aria-haspopup="true"
