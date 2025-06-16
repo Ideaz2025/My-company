@@ -5,9 +5,7 @@ import Gif2 from './img/digital-art.gif';
 import Gif3 from './img/advertising.gif';
 import Gif4 from './img/dashboard.gif';
 import './style.css';
-
-
-
+import 'aos/dist/aos.css';
 
 export default function LinearWithValueLabel() {
   return (
@@ -64,41 +62,32 @@ export default function LinearWithValueLabel() {
           </div>
         </div>
       </section>
-        <div className="text-center">
-            <h2>Testimonials</h2>
-            <p>Our services are designed to help you achieve your business goals with ease and confidence. Explore our range of services below:</p>
-          </div>
-          <br />
-      <section id="about" className="about">
-        
-          <figure class="snip1157">
-    <blockquote>Calvin: You know sometimes when I'm talking, my words can't keep up with my thoughts... I wonder why we think faster than we speak. Hobbes: Probably so we can think twice.
-      <div class="arrow"></div>
+       <section id="about" className="about">
+  <figure className="snip1157" data-aos="fade-up" data-aos-delay="100">
+    <blockquote>
+     Working with this team was a fantastic experience. They built a responsive and visually impressive website that boosted our online presence
+      <div className="arrow"></div>
     </blockquote>
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="sq-sample3" />
-    <div class="author">
-      <h5>Pelican Steve <span> LIttleSnippets.net</span></h5>
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="testimonial-1" />
+    <div className="author">
+      <h5>Professor</h5>
     </div>
   </figure>
-      <figure class="snip1157 hover">
-        <blockquote>Thank you. before I begin, I'd like everyone to notice that my report is in a professional, clear plastic binder...When a report looks this good, you know it'll get an A. That's a tip kids. Write it down.
-          <div class="arrow"></div>
-        </blockquote>
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample27.jpg" alt="sq-sample27" />
-        <div class="author">
-          <h5>Max Conversion<span> LIttleSnippets.net</span></h5>
-        </div>
-      </figure>
-      <figure class="snip1157">
-        <blockquote>My behaviour is addictive functioning in a disease process of toxic co-dependency. I need holistic healing and wellness before I'll accept any responsibility for my actions.
-          <div class="arrow"></div>
-        </blockquote>
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample17.jpg" alt="sq-sample17" />
-        <div class="author">
-          <h5>Eleanor Faint<span> LIttleSnippets.net</span></h5>
-        </div>
-      </figure>
-      </section>
+
+
+
+  <figure className="snip1157" data-aos="fade-up" data-aos-delay="300">
+    <blockquote>
+     Excellent digital marketing service! We’ve seen a 40% increase in traffic and better engagement across platforms. Totally worth it
+      <div className="arrow"></div>
+    </blockquote>
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample17.jpg" alt="testimonial-3" />
+    <div className="author">
+      <h5>E-commerce<span></span></h5>
+    </div>
+  </figure>
+</section>
+
     </>
   );
 }
