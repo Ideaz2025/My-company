@@ -362,7 +362,8 @@ export default function PrimarySearchAppBar() {
               </IconButton>
             </Box>
             <Box sx={{display: {xs:'none', md: 'block' } }}>
-             <Link to="/form" className="cta-btn" > JOIN A TEAM</Link>
+              
+             <Link to="/dashboard" className="cta-btn" >Enroll Now</Link>
             </Box>
           </Toolbar>
         </AppBar>

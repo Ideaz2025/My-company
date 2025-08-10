@@ -1,25 +1,47 @@
 import React from "react";
 import { Button, Container, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import Navbar from './Navbar';
 import logo from './img/1.png';
+import { auth } from "../firebase";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { getFirestore, setDoc, doc } from 'firebase/firestore';
 
 const provider="Ideaz";
-function MadeWithLove() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Built with love by the "}
-      <Link color="inherit" href="https://mui.com/">
-        Material-UI
-      </Link>
-      {" team."}
-    </Typography>
-  );
-}
+
 
 export default function SignUp() {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const firstName = data.get("firstName");
+    const lastName = data.get("lastName");
+    const email = data.get("email");
+    const password = data.get("password");
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      await updateProfile(userCredential.user, {
+        displayName: `${firstName} ${lastName}`,
+      });
+      // Save user details to Firestore
+      const db = getFirestore();
+      await setDoc(doc(db, 'users', userCredential.user.uid), {
+        uid: userCredential.user.uid,
+        email,
+        firstName,
+        lastName,
+        displayName: `${firstName} ${lastName}`,
+        createdAt: new Date().toISOString(),
+      });
+      // Optionally add email-to-userId mapping for streak sharing
+      await setDoc(doc(db, 'emailToUserId', email), { userId: userCredential.user.uid });
+      // Optionally redirect or show success
+      alert("Registration successful!");
+    } catch (error) {
+      alert(error.message);
+    }
+  };
   return (
-    <>    <Navbar/>
+    <>  
     <Container component="main" maxWidth="xs">
      
       <CssBaseline />
@@ -35,7 +57,7 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Sign up with {provider}
         </Typography>
-        <Box component="form" noValidate sx={{ mt: 3 }}>
+        <Box component="form" noValidate sx={{ mt: 3 }} onSubmit={handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField autoComplete="fname" name="firstName" required fullWidth id="firstName" label="First Name" autoFocus />
@@ -65,9 +87,7 @@ export default function SignUp() {
           </Grid>
         </Box>
       </Box>
-      <Box mt={5}>
-        <MadeWithLove />
-      </Box>
+      
     </Container>
     </>
 
